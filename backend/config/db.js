@@ -1,8 +1,10 @@
+// Connecting the application to MongoDB
+
 const mongoose = require("mongoose");
 
 const connectDB = async () => {
     try {
-        const connect = await mongoose.connect('mongodb://localhost/mvc', 
+        const connect = await mongoose.connect(process.env.ATLAS_URI, 
         { 
             useCreateIndex:true,
             useNewUrlParser:true,

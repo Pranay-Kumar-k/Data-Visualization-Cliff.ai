@@ -1,1 +1,1 @@
-GET http://localhost:5000/metrics
+GET http://localhost:5000/metrics/60508885da4c96019c357c19_f79e329cf4d13e3613d5a690ef19bfe9
