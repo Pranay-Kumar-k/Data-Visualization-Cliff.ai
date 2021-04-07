@@ -4,11 +4,11 @@ const metricsData = require("../models/MetricsData");
 
 const getMetricsData = (req, res) => {
 
-  let id = req.params.id
-  console.log(id)
+  let Id = req.params.id
+  console.log(Id)
 
-    metricsData.find({"id": id.toString()})
-    .then((data) => res.status(200).json(data))
+    metricsData.find({id: req.params.id.toString()})
+    .then((data) => res.status(200).json({data}))
     .catch((error) => res.status(400).json(error))
   };
   
