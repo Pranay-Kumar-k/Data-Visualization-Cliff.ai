@@ -12,15 +12,17 @@ dotenv.config();
 
 const app = express();
 
+app.use(express.json());
+
 connectDB();
-
-// app.use(express.json());
-
-const itemRoutes = require("./routes/items");
 
 const metricRoutes = require("./routes/metricRoutes");
 
+const metricDataRoutes = require("./routes/metricsDataRoutes");
+
 app.use('/metrics', metricRoutes);
+
+app.use('/metrics_data', metricDataRoutes);
 
 app.listen(5000, () => {
     console.log("server is up and running");
