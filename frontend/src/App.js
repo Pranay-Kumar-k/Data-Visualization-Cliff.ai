@@ -61,7 +61,7 @@ export default function App() {
                 <h2 style={{marginLeft:"45%",marginTop:"1%"}}>{category}</h2>
                 {items && items.map(data => {
                     return (
-                        <ChartItem data={data} />
+                        <ChartItem data={data} key={data.id} id={data.id} metrics={allMetrics}/>
                     )
                 })}
             </div>
