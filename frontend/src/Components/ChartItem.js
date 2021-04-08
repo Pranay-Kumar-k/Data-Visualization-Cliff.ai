@@ -29,13 +29,13 @@ export default function ChartItem({data}) {
         ...item,
         timestamp: new Date(item.timestamp).toLocaleDateString(),
         original_value:item.original_value*2,
-        value: item.original_value*2
+        anomaly: item.original_value*2
       };
     }
     return {
       ...item,
       timestamp: new Date(item.timestamp).toLocaleDateString(),
-      value: null
+      anomaly: null
     };
   });
   return (
@@ -47,7 +47,7 @@ export default function ChartItem({data}) {
           dot={false}
           stroke="blue"
         />
-        <Line type="monotone" dataKey="value" stroke="red" dot={false}/>
+        <Line type="monotone" dataKey="anomaly" stroke="red" dot={false}/>
         <Line
           type="monotone"
           dataKey="forecasted_value"
