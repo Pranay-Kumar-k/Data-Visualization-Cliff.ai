@@ -7,6 +7,12 @@ const metricsDataSchema = new Schema({
             type:String,
             required:true
         },
+        measure: {
+            type:String,
+            unique:false,
+            maxLength:200,
+            required:true
+        },
         data: {
             type:Array,
             required:true

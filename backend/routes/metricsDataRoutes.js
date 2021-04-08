@@ -6,6 +6,6 @@ const router = express.Router();
 
 const {getMetricsData} = require("../controllers/metricsData-controller");
 
-router.get("/:id", getMetricsData);
+router.get("/:measure", getMetricsData);
 
 module.exports = router;
