@@ -3,7 +3,7 @@
 creating a data visualisation dashboard which has to convey some information in the best possible UI format.
 
 ## Screenshot
-<img src="Data-Visualization-Cliff.ai\frontend\public\Screenshot.png" alt="img"/>
+<img src="https://github.com/pranaykumar999/Data-Visualization-Cliff.ai/blob/main/frontend/public/Screenshot.png?raw=true" alt="img"/>
 
 
 ## Technologies used
