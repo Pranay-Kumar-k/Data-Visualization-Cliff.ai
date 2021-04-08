@@ -28,7 +28,8 @@ export default function ChartItem({data}) {
       return {
         ...item,
         timestamp: new Date(item.timestamp).toLocaleDateString(),
-        value: item.original_value
+        original_value:item.original_value*2,
+        value: item.original_value*2
       };
     }
     return {
@@ -39,26 +40,26 @@ export default function ChartItem({data}) {
   });
   return (
     <div>
-      <LineChart width={1000} height={300} data={filteredData}>
+      <LineChart width={3000} height={300} data={filteredData}>
         <Line
           type="monotone"
           dataKey="original_value"
           dot={false}
           stroke="blue"
         />
-        <Line type="monotone" dataKey="value" stroke="red" dot={false} />
+        <Line type="monotone" dataKey="value" stroke="red" dot={false}/>
         <Line
           type="monotone"
           dataKey="forecasted_value"
           dot={false}
           stroke="blue"
-          strokeDasharray="10 10"
+          strokeDasharray="3 3"
         />
-        <Line type="monotone" dataKey="min_band" dot={false} stroke="gray"/>
+        <Line type="monotone" dataKey="min_band" dot={false} stroke="gray" />
         <Line type="monotone" dataKey="max_band" dot={false} stroke="gray" />
         <Legend verticalAlign="top" height={36}/>
         <XAxis dataKey="timestamp" />
-        <YAxis />
+        <YAxis type="number" domain={[0, 'auto']}/>
         <Tooltip />
       </LineChart>
     </div>
