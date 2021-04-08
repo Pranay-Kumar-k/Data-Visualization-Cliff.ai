@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 
 const MetricsData = require('./models/MetricsData');
 
+const Metrics = require("./models/Metrics");
+
+const metrics = require("./data/metrics.json");
+
 const metrics_data = require("./data/metrics_data.json"); 
 
 const connectDB = require("./config/db");
@@ -15,7 +19,9 @@ connectDB();
 const importData = async() => {
     try {
         await MetricsData.deleteMany();
+        await Metrics.deleteMany();
         await MetricsData.insertMany(metrics_data);
+        await Metrics.insertMany(metrics);
         console.log("Data imported successfully");
         process.exit();
     }

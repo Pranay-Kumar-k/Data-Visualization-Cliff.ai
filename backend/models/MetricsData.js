@@ -11,7 +11,7 @@ const metricsDataSchema = new Schema({
             type:String,
             unique:false,
             maxLength:200,
-            required:true
+            // required:true
         },
         data: {
             type:Array,
